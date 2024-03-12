@@ -33,8 +33,7 @@
         <h2>Abstract:</h2>
         <p>
         <ul>
-    Text-to-speech (TTS) aims to synthesize speech with proper prosody of reply based on the input text sequence. Most TTS systems consider semantic features and acoustic features at the text coding layer to enhance prosodic expression, but the gap between text and speech still affects the quality of synthesized speech. In this paper, we propose Parallel-TTS, which uses Parallel Tokens containing semantic and acoustic information separately to guide speech synthesis in an end-to-end multi-modal speech synthesizer. To leverage pre-trained models, Parallel-TTS utilizes a two-stage strategy that involves producing intermediate speech representations from text in the first stage and then generating speech wave based on the intermediate representations in the second stage. We also extend the proposed method to zero-shot learning. Both objective and subjective evaluation results show the effectiveness of the proposed method.
-        </ul>
+    Recent studies have shown that predicting the outputs of a layer from a pre-trained model, instead of conventional mel-spectrogram, help improve the quality of synthesized speech. Previous works only predict the outputs of a single layer. On the other hand, it is known that various acoustic and linguistic properties are encoded in different layers of the pre-trained model. In this paper, we propose Parallel-TTS to utilize multiple layers from a pre-trained model to guide the acoustic and semantic prediction. Parallel-TTS utilizes a two-stage strategy that involves producing intermediate speech representations from text in the first stage and then generating speech wave based on the intermediate representations in the second stage. We also extend the proposed method to zero-shot learning. Both objective and subjective evaluation results demonstrate the effectiveness of the proposed method.
         </p>
 <hr>
         <ul>
