@@ -22,7 +22,7 @@
         <p>
         <img src="1.jpg" width="100%">
         <p>
-                <h3>Structure of Semantic and Acoustic Tokens Synthesizers.</h3>
+                <h3>Structure of Semantic and Acoustic Tokens Synthesizer.</h3>
         <p>
         <img src="2.jpg" width="80%" >
                 <p>
@@ -33,7 +33,8 @@
         <h2>Abstract:</h2>
         <p>
         <ul>
-    Recent studies have shown that predicting the outputs of a layer from a pre-trained model, instead of conventional mel-spectrogram, help improve the quality of synthesized speech. Previous works only predict the outputs of a single layer. On the other hand, it is known that various acoustic and linguistic properties are encoded in different layers of the pre-trained model. In this paper, we propose Parallel-TTS to utilize multiple layers from a pre-trained model to guide the acoustic and semantic prediction. Parallel-TTS utilizes a two-stage strategy that involves producing intermediate speech representations from text in the first stage and then generating speech wave based on the intermediate representations in the second stage. We also extend the proposed method to zero-shot learning. Both objective and subjective evaluation results demonstrate the effectiveness of the proposed method.
+    Text-to-speech (TTS) aims to synthesize speech with proper prosody of reply based on the input text sequence. Most TTS systems consider semantic features and acoustic features at the text coding layer to enhance prosodic expression, but the gap between text and speech still affects the quality of synthesized speech. In this paper, we propose Parallel-TTS, which combines end-to-end multi-modal speech synthesis with two-stage speech synthesis based on pre-trained models, using Parallel Tokens that contain both semantic and acoustic information to guide speech synthesis. We also extend the proposed method to zero-shot learning. Both objective and subjective evaluation results show the effectiveness of the proposed method.
+        </ul>
         </p>
 <hr>
         <ul>
@@ -49,7 +50,7 @@
 
     <div id='section-1' class='section'>
         <h2>Single Speaker TTS</h2>
-        <li>Parallel-TTS (Semantic) indicates that we have chosen only the 12th layer of Wav2vec 2.0 as an intermediate feature.</li>
+        <li>Parallel-TTS (,12) indicates that we have chosen only the 12th layer of Wav2vec 2.0 as an intermediate feature.</li>
         <li>Parallel-TTS (4,12) indicates that we have chosen the 4th layer of Wav2vec 2.0 as acoustic feature and the 12th laryer as semantic feature, then comined them as the Parallel Tokens.</li>
         <li>Parallel-TTS (6,12) indicates that we have chosen the 6th layer of Wav2vec 2.0 as acoustic feature and the 12th laryer as semantic feature, then comined them as the Parallel Tokens.</li>
         <hr>
@@ -74,7 +75,7 @@
         <table border="1" width="100%">
   <thead>
     <tr>
-      <th style="text-align: center">Parallel-TTS (Semantic)<strong></strong></th>
+      <th style="text-align: center">Parallel-TTS (,12)<strong></strong></th>
       <th style="text-align: center"><strong>Parallel-TTS (4,12)</strong></th>
               <th style="text-align: center"><strong>Parallel-TTS (6,12)</strong></th>
     </tr>
@@ -109,7 +110,7 @@
         <table border="1" width="100%">
   <thead>
     <tr>
-      <th style="text-align: center">Parallel-TTS (Semantic)<strong></strong></th>
+      <th style="text-align: center">Parallel-TTS (,12)<strong></strong></th>
       <th style="text-align: center"><strong>Parallel-TTS (4,12)</strong></th>
               <th style="text-align: center"><strong>Parallel-TTS (6,12)</strong></th>
     </tr>
@@ -142,7 +143,7 @@
         <table border="1" width="100%">
   <thead>
     <tr>
-      <th style="text-align: center">Parallel-TTS (Semantic)<strong></strong></th>
+      <th style="text-align: center">Parallel-TTS (,12)<strong></strong></th>
       <th style="text-align: center"><strong>Parallel-TTS (4,12)</strong></th>
               <th style="text-align: center"><strong>Parallel-TTS (6,12)</strong></th>
     </tr>
@@ -175,7 +176,7 @@
         <table border="1" width="100%">
   <thead>
     <tr>
-      <th style="text-align: center">Parallel-TTS (Semantic)<strong></strong></th>
+      <th style="text-align: center">Parallel-TTS (,12)<strong></strong></th>
       <th style="text-align: center"><strong>Parallel-TTS (4,12)</strong></th>
               <th style="text-align: center"><strong>Parallel-TTS (6,12)</strong></th>
     </tr>
@@ -208,7 +209,7 @@
         <table border="1" width="100%">
   <thead>
     <tr>
-      <th style="text-align: center">Parallel-TTS (Semantic)<strong></strong></th>
+      <th style="text-align: center">Parallel-TTS (,12)<strong></strong></th>
       <th style="text-align: center"><strong>Parallel-TTS (4,12)</strong></th>
               <th style="text-align: center"><strong>Parallel-TTS (6,12)</strong></th>
     </tr>
@@ -221,6 +222,64 @@
     </tr>
   </tbody>
 </table>
+        <hr>
+        <li>We alos compared Parallel-TTS (6, 12) with the JETS which outperforms VITS on LJSpeech dataset.</li>
+    <hr>
+
+        <p> 1. Text:The Commission also recommends .</p>
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th style="text-align: center">Ground Truth<strong></strong></th>
+      <th style="text-align: center"><strong>JETS</strong></th>
+              <th style="text-align: center"><strong>Parallel-TTS(6,12)</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><audio src="jj/1_GT.mp3" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="jj/1_JETS.mp3" controls="" preload=""></audio></td>
+              <td style="text-align: left"><audio src="jj/1_Parallel-TTS.mp3" controls="" preload=""></audio></td>
+    </tr>
+  </tbody>
+</table>
+
+                <p> 2. Text:And reports from other agencies which independently evaluate their information for potential sources of danger.</p>
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th style="text-align: center">Ground Truth<strong></strong></th>
+      <th style="text-align: center"><strong>JETS</strong></th>
+              <th style="text-align: center"><strong>Parallel-TTS(6,12)</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><audio src="jj/2_GT.mp3" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="jj/2_JETS.mp3" controls="" preload=""></audio></td>
+              <td style="text-align: left"><audio src="jj/2_Parallel-TTS.mp3" controls="" preload=""></audio></td>
+    </tr>
+  </tbody>
+</table>
+
+                <p> 3. Text:As a result of these studies, the planning document submitted by the Secretary of the Treasury to the Bureau of the Budget on August thirty-one.</p>
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th style="text-align: center">Ground Truth<strong></strong></th>
+      <th style="text-align: center"><strong>JETS</strong></th>
+              <th style="text-align: center"><strong>Parallel-TTS(6,12)</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><audio src="jj/3_GT.mp3" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="jj/3_JETS.mp3" controls="" preload=""></audio></td>
+              <td style="text-align: left"><audio src="jj/3_Parallel-TTS.mp3" controls="" preload=""></audio></td>
+    </tr>
+  </tbody>
+</table>
+
     </div>
 
     <hr>
@@ -242,6 +301,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
               <th style="text-align: center">Reference Audio<strong></strong></th>
               <th style="text-align: center">Ground Truth<strong></strong></th>
       <th style="text-align: center">VITS<strong></strong></th>
+        <th style="text-align: center"><strong>YourTTS</strong></th>
       <th style="text-align: center"><strong>Parallel-TTS</strong></th>
     </tr>
   </thead>
@@ -250,6 +310,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
       <td style="text-align: left"><audio src="sam/1_ref.mp3" controls="" preload=""></audio></td>
               <td style="text-align: left"><audio src="sam/1_gt.mp3" controls="" preload=""></audio></td>
     <td style="text-align: left"><audio src="sam/1_vits-ref.mp3" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="yourtts-1/1.wav" controls="" preload=""></audio></td>
                 <td style="text-align: left"><audio src="sam/1_ours-ref.mp3" controls="" preload=""></audio></td>
     </tr>
   </tbody>
@@ -258,6 +319,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
       <td style="text-align: left"><audio src="sam/2_ref.mp3" controls="" preload=""></audio></td>
                       <td style="text-align: left"><audio src="sam/2_gt.mp3" controls="" preload=""></audio></td>
     <td style="text-align: left"><audio src="sam/2_vits-ref.mp3" controls="" preload=""></audio></td>
+                <td style="text-align: left"><audio src="yourtts-1/2.wav" controls="" preload=""></audio></td>
                 <td style="text-align: left"><audio src="sam/2_ours-ref.mp3" controls="" preload=""></audio></td>
     </tr>
   </tbody>
@@ -266,6 +328,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
       <td style="text-align: left"><audio src="sam/3_ref.mp3" controls="" preload=""></audio></td>
                       <td style="text-align: left"><audio src="sam/3_gt.mp3" controls="" preload=""></audio></td>
     <td style="text-align: left"><audio src="sam/3_vits-ref.mp3" controls="" preload=""></audio></td>
+                <td style="text-align: left"><audio src="yourtts-1/3.wav" controls="" preload=""></audio></td>
                 <td style="text-align: left"><audio src="sam/3_ours-ref.mp3" controls="" preload=""></audio></td>
     </tr>
   </tbody>
@@ -274,6 +337,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
       <td style="text-align: left"><audio src="sam/4_ref.mp3" controls="" preload=""></audio></td>
                       <td style="text-align: left"><audio src="sam/4_gt.mp3" controls="" preload=""></audio></td>
     <td style="text-align: left"><audio src="sam/4_vits-ref.mp3" controls="" preload=""></audio></td>
+                <td style="text-align: left"><audio src="yourtts-1/4.wav" controls="" preload=""></audio></td>
                 <td style="text-align: left"><audio src="sam/4_ours-ref.mp3" controls="" preload=""></audio></td>
     </tr>
   </tbody>
@@ -282,6 +346,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
       <td style="text-align: left"><audio src="sam/5_ref.mp3" controls="" preload=""></audio></td>
                       <td style="text-align: left"><audio src="sam/5_gt.mp3" controls="" preload=""></audio></td>
     <td style="text-align: left"><audio src="sam/5_vits-ref.mp3" controls="" preload=""></audio></td>
+                <td style="text-align: left"><audio src="yourtts-1/5.wav" controls="" preload=""></audio></td>
                 <td style="text-align: left"><audio src="sam/5_ours-ref.mp3" controls="" preload=""></audio></td>
     </tr>
   </tbody>
@@ -289,8 +354,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
 
                 <hr>
         <h3>Sample for Unseen Speaker - Test Set</h3>
-        <p> 1. Text Prompt: Ask her to bring these things with her from the store.
-.</p>
+        <p> 1. Text Prompt: Ask her to bring these things with her from the store.</p>
         </table>
         <table border="1" width="100%">
   <thead>
@@ -299,6 +363,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
               <th style="text-align: center">Reference Audio<strong></strong></th>
                       <th style="text-align: center">Ground Truth<strong></strong></th>
       <th style="text-align: center">VITS<strong></strong></th>
+              <th style="text-align: center"><strong>YourTTS</strong></th>
       <th style="text-align: center"><strong>Parallel-TTS</strong></th>
     </tr>
   </thead>
@@ -307,6 +372,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
       <td style="text-align: left"><audio src="sam1/1_ref.mp3" controls="" preload=""></audio></td>
               <td style="text-align: left"><audio src="sam1/1_gt.mp3" controls="" preload=""></audio></td>
     <td style="text-align: left"><audio src="sam1/1_vits-ref.mp3" controls="" preload=""></audio></td>
+                        <td style="text-align: left"><audio src="yourtts-2/1.wav" controls="" preload=""></audio></td>
                 <td style="text-align: left"><audio src="sam1/1_ours-ref.mp3" controls="" preload=""></audio></td>
     </tr>
   </tbody>
@@ -316,6 +382,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
       <td style="text-align: left"><audio src="sam1/4_ref.mp3" controls="" preload=""></audio></td>
                       <td style="text-align: left"><audio src="sam1/4_gt.mp3" controls="" preload=""></audio></td>
     <td style="text-align: left"><audio src="sam1/4_vits-ref.mp3" controls="" preload=""></audio></td>
+                                <td style="text-align: left"><audio src="yourtts-2/4.wav" controls="" preload=""></audio></td>
                 <td style="text-align: left"><audio src="sam1/4_ours-ref.mp3" controls="" preload=""></audio></td>
     </tr>
   </tbody>
@@ -324,6 +391,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
       <td style="text-align: left"><audio src="sam1/5_ref.mp3" controls="" preload=""></audio></td>
                       <td style="text-align: left"><audio src="sam1/5_gt.mp3" controls="" preload=""></audio></td>
     <td style="text-align: left"><audio src="sam1/5_vits-ref.mp3" controls="" preload=""></audio></td>
+                                <td style="text-align: left"><audio src="yourtts-2/5.wav" controls="" preload=""></audio></td>
                 <td style="text-align: left"><audio src="sam1/5_ours-ref.mp3" controls="" preload=""></audio></td>
     </tr>
   </tbody>
@@ -338,6 +406,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
               <th style="text-align: center">Reference Audio<strong></strong></th>
                       <th style="text-align: center">Ground Truth<strong></strong></th>
       <th style="text-align: center">VITS<strong></strong></th>
+                      <th style="text-align: center"><strong>YourTTS</strong></th>
       <th style="text-align: center"><strong>Parallel-TTS</strong></th>
     </tr>
   </thead>
@@ -346,6 +415,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
       <td style="text-align: left"><audio src="sam2/3_ref.mp3" controls="" preload=""></audio></td>
                       <td style="text-align: left"><audio src="sam2/3_gt.mp3" controls="" preload=""></audio></td>
     <td style="text-align: left"><audio src="sam2/3_vits-ref.mp3" controls="" preload=""></audio></td>
+        <td style="text-align: left"><audio src="yourtts-3/3.wav" controls="" preload=""></audio></td>
                 <td style="text-align: left"><audio src="sam2/3_ours-ref.mp3" controls="" preload=""></audio></td>
     </tr>
   </tbody>
@@ -354,6 +424,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
       <td style="text-align: left"><audio src="sam2/4_ref.mp3" controls="" preload=""></audio></td>
                       <td style="text-align: left"><audio src="sam2/4_gt.mp3" controls="" preload=""></audio></td>
     <td style="text-align: left"><audio src="sam2/4_vits-ref.mp3" controls="" preload=""></audio></td>
+                <td style="text-align: left"><audio src="yourtts-3/4.wav" controls="" preload=""></audio></td>
                 <td style="text-align: left"><audio src="sam2/4_ours-ref.mp3" controls="" preload=""></audio></td>
     </tr>
   </tbody>
@@ -362,6 +433,7 @@ selected 1 representative from each accent totaling 7 women and 4 men (speakers 
       <td style="text-align: left"><audio src="sam2/5_ref.mp3" controls="" preload=""></audio></td>
                       <td style="text-align: left"><audio src="sam2/5_gt.mp3" controls="" preload=""></audio></td>
     <td style="text-align: left"><audio src="sam2/5_vits-ref.mp3" controls="" preload=""></audio></td>
+                <td style="text-align: left"><audio src="yourtts-3/5.wav" controls="" preload=""></audio></td>
                 <td style="text-align: left"><audio src="sam2/5_ours-ref.mp3" controls="" preload=""></audio></td>
     </tr>
   </tbody>
